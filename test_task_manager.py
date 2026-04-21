@@ -19,6 +19,7 @@ def test_remove_task():
     tm.remove_task(0)  #  Удаляем задачу № 0 (индекс 0)
     assert len(tm.tasks) == 1  #  Проверяем, что в списке задач осталась одна задача
     assert tm.tasks[0]['description'] != "Задача 1"  #  Проверяем, что удалилась именно "Задача 1"
+    assert tm.tasks[0]['description'] == "Задача 2"  #  Проверяем, что "Задача 2" не удалилась
 
 
 def test_save_load_json(tmp_path):
