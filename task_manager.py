@@ -13,7 +13,7 @@ class TaskManager:
 
 
     def complete_task(self, index: int) -> None:  #  Отметка задачи как выполненной по индексу
-        if index in range(0, len(self.tasks)):
+        if index in range(len(self.tasks)):
             if self.tasks[index]['completed'] is False:
                 self.tasks[index]['completed'] = True
                 print(f"Задача с индексом {index} успешно отмечена как выполненная.")
@@ -24,7 +24,7 @@ class TaskManager:
 
 
     def remove_task(self, index: int) -> None:  #  Удаление задачи по индексу
-        if index in range(0, len(self.tasks)):
+        if index in range(len(self.tasks)):
             removed_task = self.tasks.pop(index)  #  Сохраняем удаляемую задачу, чтобы вывести ее описание после удаления
             print(f"Задача '{removed_task['description']}' успешно удалена.")
         else:
